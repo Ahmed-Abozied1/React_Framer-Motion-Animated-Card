@@ -1,0 +1,38 @@
+.list{
+    width: 25%;
+    min-width: 300px;
+    max-width: 400px;
+    position: relative;
+    margin: 20px;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 164, .2) 0px 8px 24px;
+background-color: lightgray;
+}
+.list::before{
+    content: "";
+    display: block;
+    padding-bottom: calc((5/4)*100%);
+     
+}
+.list_content{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.list_Image_container{
+    width: 100%;
+    height: 65%;
+    overflow: hidden;
+}
+.list_Image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+

@@ -1,9 +1,14 @@
-import './App.css';
-
+import "./App.css";
+import Card from "./components";
+import { properties } from "./constants/data";
 function App() {
   return (
     <div className="App">
-     Hello
+      <div className="properties">
+        {properties.map((item) => (
+          <Card data={item} />
+        ))}
+      </div>
     </div>
   );
 }
