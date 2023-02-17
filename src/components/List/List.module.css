@@ -51,6 +51,7 @@
 }
 .list_price {
   font-size: 1.5rem;
+  padding-top: 1rem;
 }
 
 .list_address {
@@ -66,4 +67,29 @@
   padding: 5px 10px;
   font-weight: bold;
   background-color: #dff7ff;
+}
+.list_numbed{
+    font-size: 18px;
+    font-weight: 600;
+    color: #565659;
+
+}
+.bed_icon{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #f4eeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: .5rem;
+
+}
+.feature{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    margin: .5rem;
+    
 }
