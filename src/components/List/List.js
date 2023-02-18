@@ -1,53 +1,39 @@
 import React from "react";
-import styles from "./List.module.css";
-const List = ({ data }) => {
+import Feature from "../Feature/Feature";
+import "./List.css";
+import { motion } from "framer-motion";
+
+const Listing = ({ data, open }) => {
   const { imageUrl, price, address, numBedroom, numWashrooms, livingSpace } =
     data;
+
   return (
-    <div className={styles.list}>
-      <div className={styles.list_content}>
-        <div className={styles.list_Image_container}>
-          <img src={imageUrl} className={styles.list_Image} alt="Image1" />
+    <motion.div className="listing" onClick={open} whileHover={{ scale: 1.1 }}>
+      <div className="listing__content">
+        <div className="listing__image-container">
+          <img
+            className="listing__image"
+            alt="real estate mansion"
+            src={imageUrl}
+          />
         </div>
-        <div className={styles.list_details}>
-          <div className={styles.list_type}>Sale</div>
-          <div className={styles.list_row}>
-            <span className={styles.list_price}>{price}</span>
+        <div className="listing__details">
+          <div className="listing__type">For Sale</div>
+          <div className="listing__row">
+            <span className="listing__price">{price}</span>
           </div>
-          <div className={styles.list_row}>
-            <span className={styles.list_address}>{address}</span>
+          <div className="listing__row">
+            <span className="listing__address">{address}</span>
           </div>
-         <div className={styles.feature}>
-         <div className={styles.list_row}>
-            <div className={styles.bed_icon}>
-              <i
-                className="fa-sharp fa-solid fa-bed"
-                style={{ fontSize: 24, color:"gray" }}
-              ></i>
-            </div>
-            <span className={styles.list_numbed}>{numBedroom}</span>
+          <div className="listing__row">
+            <Feature iconName={"FaBed"} iconLabel={numBedroom} />
+            <Feature iconName={"FaShower"} iconLabel={numWashrooms} />
+            <Feature iconName={"FaRuler"} iconLabel={livingSpace} />
           </div>
-          <div className={styles.list_row}>
-            <div className={styles.bed_icon}>
-            <i class="fa-sharp fa-solid fa-shower" style={{ fontSize: 24, color:"gray" }}></i>
-            </div>
-            <span className={styles.list_numbed}>{numWashrooms}</span>
-          </div>
-          <div className={styles.list_row}>
-            <div className={styles.bed_icon}>
-              <i
-                className="fa-solid fa-ruler"
-                style={{ fontSize: 24, color:"gray" }}
-              ></i>
-            </div>
-            <span className={styles.list_numbed}>{livingSpace}</span>
-          </div>
-         </div>
-          
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-export default List;
+export default Listing;
